@@ -1,24 +1,28 @@
 const dead = document.getElementById('dead');
 const lost = document.getElementById('lost');
 const reset = document.getElementById('reset-game');
+const hole = Array.from(document.querySelectorAll('.hole'));
 
-const hole = function (index) {
-   return document.getElementById(`hole${index}`)
-};
+// const hole = function (index) {
+//    return document.getElementById(`hole${index}`)
+// }; 
 
-for (let i = 1; i < 10; i++) {
-   hole(i).onclick = function () {
-      if (hole(i).className.includes('hole_has-mole')) {
+function endGame(alertText) {
+   alert(alertText);
+   lost.textContent = dead.textContent = 0;
+}
+
+for (let i = 0; i < 9; i++) {
+   hole[i].onclick = function () {
+      if (hole[i].className.includes('hole_has-mole')) {
          ++dead.textContent;
          if (+dead.textContent === 10) {
-            alert('Вы выиграли');
-            lost.textContent = dead.textContent = 0;
-         }
+            endGame('Вы выйграли')
+         };
       } else {
          ++lost.textContent;
          if (+lost.textContent === 5) {
-            alert('Вы проиграли');
-            lost.textContent = dead.textContent = 0;
+            endGame('Вы проиграли')
          };
       };
    };
