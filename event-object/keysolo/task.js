@@ -18,11 +18,7 @@ class Game {
 
   registerEvents() {
     function checkSymbol(e) {
-      if (e.key === this.currentSymbol.textContent) {
-        this.success();
-      } else {
-        this.fail();
-      }
+      e.key.toUpperCase() === this.currentSymbol.textContent.toUpperCase() ? this.success() : this.fail();
     }
     window.addEventListener('keydown', checkSymbol.bind(this))
   }

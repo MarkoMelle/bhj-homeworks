@@ -20,7 +20,6 @@ dropdownLinks.forEach((Element, index) => {
    Element.forEach((Element) => Element.addEventListener('click', function () {
       dropValue[index].textContent = Element.textContent;
       dropdownList[index].classList.remove('dropdown__list_active');
-      return false /* Не срабатывает почему-то приклось добавлять атрибут */
    })
    )
 });
