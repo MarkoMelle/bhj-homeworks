@@ -95,3 +95,7 @@
   letter-spacing: 1px;
   font-size: 13px;
 }
+
+.message img {
+ width: 100%;
+}
