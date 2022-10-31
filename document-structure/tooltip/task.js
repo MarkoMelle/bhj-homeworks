@@ -16,7 +16,11 @@ removeTooltip();
 
 link.forEach(function (e) {
    e.addEventListener('click', (e) => {
-      removeTooltip();
-      e.target.nextElementSibling.classList.add('tooltip_active');
+      if (e.target.nextElementSibling.classList.contains('tooltip_active')) {
+         removeTooltip();
+      } else {
+         removeTooltip();
+         e.target.nextElementSibling.classList.add('tooltip_active');
+      }
    })
 })
