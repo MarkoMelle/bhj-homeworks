@@ -2,8 +2,22 @@ body {
   font-family: Arial;
 }
 
+.poll__answers {
+  display: flex;
+  gap: 20px;
+}
+
+.poll__answers_onstat {
+flex-direction: column;
+}
+
 .card {
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 20px;
   width: 625px;
+  background-color: rgb(236, 236, 236);
+  box-shadow: 5px 10px 12px rgba(0, 0, 0, 0.326)
 }
 
 .poll__title {
