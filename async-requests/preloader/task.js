@@ -13,11 +13,13 @@ if (response !== null && Object.keys(response).length !== 0) {
    setNewItem()
 };
 
-xhr.addEventListener("readystatechange", (e) => {
-   if (xhr.readyState === xhr.DONE) {
+
+
+
+xhr.addEventListener("load", (e) => {
+   if (e.readyState === e.DONE) {
       window.localStorage.setItem('Valute', xhr.response);
       response = JSON.parse(xhr.response);
-      console.log('Ответ получин');
       setNewItem();
    };
 })
